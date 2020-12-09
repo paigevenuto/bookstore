@@ -1,0 +1,61 @@
+{
+  "$schema": "bookUpdateSchema",
+  "type": "object",
+  "examples": [
+    {
+      "isbn": "0691161518",
+      "amazon_url": "http://a.co/eobPtX2",
+      "author": "Matthew Lane",
+      "language": "english",
+      "pages": 264,
+      "publisher": "Princeton University Press",
+      "year": 2017
+    }
+  ],
+  "required": [
+    "amazon_url",
+    "author",
+    "language",
+    "pages",
+    "publisher",
+    "year"
+  ],
+  "properties": {
+    "amazon_url": {
+      "type": "string",
+      "pattern": "^http(s?)://(www.)?(a.co|amazon.com)/(.*)",
+      "examples": ["http://a.co/eobPtX2"]
+    },
+    "author": {
+      "type": "string",
+      "pattern": "^([A-Z]+[a-z]*.?.?)+$",
+      "examples": ["Matthew Lane"]
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]+$",
+      "examples": ["english"]
+    },
+    "pages": {
+      "type": "integer",
+      "pattern": "(^[0-9]+$)",
+      "examples": [264]
+    },
+    "publisher": {
+      "type": "string",
+      "pattern": "^[A-Z]+([a-z]*.?)+$",
+      "examples": ["Princeton University Press"]
+    },
+    "title": {
+      "type": "string",
+      "pattern": "^(.*)$",
+      "examples": ["Power-Up: Unlocking the Hidden Mathematics in Video Games"]
+    },
+    "year": {
+      "type": "integer",
+      "pattern": "^([0-9]{4})$",
+      "examples": [2017]
+    }
+  },
+  "additionalProperties": false
+}
